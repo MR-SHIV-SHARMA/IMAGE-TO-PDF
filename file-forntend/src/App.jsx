@@ -56,6 +56,13 @@ function App() {
       .catch((err) => console.log(err));
   };
 
+  const handleNext = () => {
+    setFile(null);
+    setResult(null);
+    setPreview(null);
+    setOutputFormat("pdf");
+  };
+
   return (
     <div className="App flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-500 p-4">
       <h1 className="text-3xl md:text-4xl font-bold mb-6 text-center text-white">
@@ -139,6 +146,12 @@ function App() {
             >
               <FiDownload className="mr-2" />
               Download
+            </button>
+            <button
+              onClick={handleNext}
+              className="mt-2 flex items-center justify-center w-full py-2 px-4 rounded-lg bg-yellow-500 hover:bg-yellow-600 text-white focus:outline-none focus:ring-2 focus:ring-yellow-300"
+            >
+              Next
             </button>
           </div>
         )}
